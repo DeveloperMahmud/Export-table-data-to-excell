@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export to Excel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
+</head>
+<body>
+    <section class="table ">
+        <table id="tbl_data">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Country</th>
+            </tr>
+                <tr>
+                    <td>Md.Mahmudul Hassan</td>
+                    <td>admin@gmail.com</td>
+                    <td>BD</td>
+                </tr>
+                <tr>
+                    <td>Mehedi Hassan</td>
+                    <td>assistance@gmail.com</td>
+                    <td>BD</td>
+                </tr>
+                <tr>
+                    <td>Mehedi Hassan</td>
+                    <td>assistance@gmail.com</td>
+                    <td>BD</td>
+                </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>john@gmail.com</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td>Michael Addison</td>
+                <td>michael@gmail.com</td>
+                <td>UK</td>
+            </tr>
+            <tr>
+                <td>Sam Farmer</td>
+                <td>sam@gmail.com</td>
+                <td>France</td>
+            </tr>
+			<tr>
+                <td> </td>
+                <td> </td>
+                <td>
+					<button class="btn btn-success float-right mr-4 mb-4" onclick="exportTableToExcel('tbl_data')">
+					Export To Excel File
+				</button>
+				</td>
+            </tr>
+        </table>
+        <!-- <table class="table" id="tbl_data">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th><th>الاسم</th><th>تاريخ التسجيل</th><th>اسم المستخدم</th><th>اللقب</th><th>البريد الإلكتروني</th><th>الشركه</th><th>المدينه</th><th>قبول الطلب</th><th>رفض الطلب</th>
+                </tr>
+            </thead>
+            <tbody>
+                     <tr>
+                        <td scope="row">225</td><td>خلود</td><td>2020-05-08 02:13:27</td><td>kholoudmr</td><td>المرغلاني</td><td>k.k00h@hotmail.com</td><td>صيدليه</td><td>الرحيلي طيبه</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(225)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(225)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">232</td><td>hawa</td><td>2020-05-11 06:21:48</td><td>hyadam</td><td>youssif</td><td>trwaky2010@windowslive.com</td><td>النهدي</td><td>ابومريم السلولي شارع حسان بن خوط</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(232)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(232)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">236</td><td>Ali</td><td>2020-05-11 22:30:51</td><td>Ali aldeeb</td><td>Aldeeb</td><td>alialoleeb@yahoo.com</td><td>صيدلية الفتح</td><td>الساحل</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(236)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(236)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">248</td><td>omwassn</td><td>2020-05-16 01:52:56</td><td>omwassn</td><td>algarni </td><td>omwassn@hotmail.com</td><td>الرياض</td><td>كوالالمبور </td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(248)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(248)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">256</td><td>ايمان  </td><td>2020-05-26 12:12:53</td><td>eman</td><td>الزهراني </td><td>enen15@hotmail.com</td><td>متجر وقاية </td><td>شارع حسان بن ثابت حي الوشحاء </td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(256)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(256)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">259</td><td>ام</td><td>2020-05-28 21:00:04</td><td>mahasen</td><td>الوليد </td><td>maabagm@hotmail.com</td><td>Jeddah </td><td>king saud</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(259)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(259)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">260</td><td>Abdullah </td><td>2020-05-29 07:38:53</td><td>Alharbi</td><td>Alharbi </td><td>ksa0791@hotmail.com</td><td>ال</td><td>احمد الناصر</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(260)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(260)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">261</td><td>محمد</td><td>2020-05-29 17:45:34</td><td>a7a72006</td><td>الغامدي</td><td>sacepjeddah2016@gmail.com</td><td>شخصي</td><td>انس بن معاذ 8112</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(261)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(261)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">265</td><td>saeed</td><td>2020-06-02 04:58:46</td><td>abunader</td><td>safar</td><td>al-9g_333@hotmail.com</td><td>لا يوجد</td><td>شارع الالفيه</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(265)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(265)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">266</td><td>نوال</td><td>2020-06-02 20:49:45</td><td>0503059106</td><td>عسيري</td><td>toto1437@hotmil.com</td><td>السعوديه</td><td>شارع الملك فهد</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(266)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(266)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">272</td><td>issam</td><td>2020-06-04 21:03:42</td><td>issam kbibchi</td><td>kbibchi</td><td>fatimalaroussi671@gmail.com</td><td>issam</td><td>fadaa fes</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(272)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(272)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">290</td><td>مريم</td><td>2020-06-13 11:20:16</td><td>M0533755481m</td><td>علي</td><td>Mareem99.99@hotmail.com</td><td>متجروقاية</td><td>شارع عبدالله الخزرجي جاكس الدرعيه الجديدةظهرةالعودة</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(290)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(290)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">304</td><td>محمد </td><td>2020-06-20 21:19:40</td><td>Mohammed al</td><td>الكبير</td><td>momomo@gmail.com</td><td>صيدلية العماد المركزيه</td><td>شارع المصنع الاسمنت</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(304)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(304)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">317</td><td>مجدي</td><td>2020-06-22 16:27:19</td><td>mak</td><td>الفيتوري</td><td>makjoj541@gmail.com</td><td>صيدلية المنارة </td><td>الصبخة</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(317)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(317)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">309</td><td>حلا </td><td>2020-06-20 22:36:17</td><td>Halimah</td><td>السيد </td><td>hlom5551@gmail.com</td><td> لايوجد</td><td>الشارع العام جدة جيزان </td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(309)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(309)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">326</td><td>سعد</td><td>2020-06-24 09:41:58</td><td>saad_07</td><td>الشمراني</td><td>Saood.900800@gmail.com</td><td>الحمدانية</td><td>الشارع العام</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(326)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(326)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">328</td><td>dear </td><td>2020-06-26 10:10:05</td><td>dear</td><td>dear </td><td>fofoccc@windowslive.com</td><td>dear </td><td>dear </td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(328)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(328)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">329</td><td>ابتهال</td><td>2020-06-26 17:08:40</td><td>e.alsunni</td><td>السني</td><td>e.alsunni@hotmail.com</td><td>منزل</td><td>داوود الظاهري</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(329)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(329)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">339</td><td>محمد </td><td>2020-06-30 13:14:18</td><td>lb2</td><td>المطيري </td><td>mdoodc.12@gmail.com</td><td>النهدي </td><td>58</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(339)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(339)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">346</td><td>Abubkr</td><td>2020-07-05 23:05:41</td><td>alqaw</td><td>Alqaw</td><td>elqaaw@gmail.com</td><td>صيدلية النور </td><td>الرياضية</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(346)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(346)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">354</td><td>عمر</td><td>2020-07-07 06:50:58</td><td>oomar</td><td>المطيري</td><td>zoozmutir@gmail.com</td><td>accv</td><td>العام</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(354)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(354)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">361</td><td>ماهر</td><td>2020-07-08 12:08:53</td><td>maher</td><td>ماهر</td><td>scoolo_7anno@hotmail.com</td><td>فيلا</td><td>الملك عبدالعزيز</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(361)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(361)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">367</td><td>Dr khalifa dorop</td><td>2020-07-12 13:30:16</td><td>Dr khalifa dorop</td><td>Dr khalifa dorop</td><td>khalifaglos3@gmail.com</td><td>صيدلية دروب</td><td>الدائري الرابع</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(367)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(367)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">368</td><td>عمار</td><td>2020-07-13 18:19:49</td><td>Ammar</td><td>علي</td><td>ammaroky@gmail.com</td><td>الربوة</td><td>حراء</td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(368)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(368)" role="button">رفض</a></td>
+                    </tr>
+                                <tr>
+                        <td scope="row">387</td><td>Taraf</td><td>2020-07-29 09:01:40</td><td>Taraf</td><td>Alharbi</td><td>Tarafalharbi55@gmail.com</td><td>محلي </td><td>حسان بن النعمان </td><td><a class="btn btn-primary" id="accept" href="#" onclick="jar(387)" role="button">قبول</a></td><td><a class="btn btn-danger" href="#" onclick="jav(387)" role="button">رفض</a></td>
+                    </tr>
+            </tbody>
+        </table> -->
+        
+        
+    </section>
+
+
+
+
+    <script>
+        
+        function exportTableToExcel(tableID, filename = ''){
+            var downloadLink;
+            var dataType = 'application/vnd.ms-excel';
+            var tableSelect = document.getElementById(tableID);
+            var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+            
+            // Specify file name
+            filename = filename?filename+'.xls':'excel_data.xls';
+            
+            // Create download link element
+            downloadLink = document.createElement("a");
+            
+            document.body.appendChild(downloadLink);
+            
+            if(navigator.msSaveOrOpenBlob){
+                var blob = new Blob(['\ufeff', tableHTML], {
+                    type: dataType
+                });
+                navigator.msSaveOrOpenBlob( blob, filename);
+            }else{
+                // Create a link to the file
+                downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+            
+                // Setting the file name
+                downloadLink.download = filename;
+                
+                //triggering the function
+                downloadLink.click();
+            }
+        }
+    </script>
+
+</body>
+</html>
